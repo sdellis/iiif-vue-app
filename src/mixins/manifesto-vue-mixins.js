@@ -7,8 +7,9 @@ const ManifestoVueMixins = {
     console.log('hello!')
   },
 
-  title: function () {
-    return this.getLabel()
+  getEnglishTitle: function () {
+    var title = this.getLabel()
+    return title[0].value
   },
 
   mainSequence: function () {
@@ -46,7 +47,7 @@ const ManifestoVueMixins = {
     const nodes = new schema.Array(node)
     node.define({ nodes })
     const tree = new schema.Entity('tree', { nodes })
-    const toc = normalize(this.getTree(), tree)
+    const toc = normalize(this.getDefaultTree(), tree)
     window.toc = toc
     return toc
   },
@@ -58,7 +59,7 @@ const ManifestoVueMixins = {
 
     var toc = {
       id: 0,
-      name: 'My Tree',
+      name: this.getEnglishTitle(),
       children: this.getChildNodes(tree, nodes)
     }
 

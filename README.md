@@ -6,6 +6,9 @@ Simple browser-based viewer for IIIF manifests implemented with Vue.js component
 ## Build Setup
 
 ``` bash
+# install typings globally for Manifesto
+npm install typings -g
+
 # install dependencies
 npm install
 
