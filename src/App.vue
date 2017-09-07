@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>IIIF Transcribe</span>
+      <span>IIIF Vue Components</span>
     </header>
     <main>
       <router-view></router-view>
