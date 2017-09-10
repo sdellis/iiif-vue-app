@@ -2,8 +2,7 @@
   <li>
     <div
       :class="{bold: isFolder}"
-      @click="toggle"
-      @dblclick="changeType">
+      @click="toggle">
       {{model.name}}
       <span v-if="isFolder">[{{open ? '-' : '+'}}]</span>
     </div>
@@ -12,14 +11,13 @@
         class="item"
         v-for="model in model.children"
         :model="model">
-      </item>
-      <li class="add" @click="addChild">+</li>
+      </item>  
     </ul>
   </li>
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 // define the item component
 export default {
   name: 'item',
@@ -43,18 +41,6 @@ export default {
       if (this.isFolder) {
         this.open = !this.open
       }
-    },
-    changeType: function () {
-      if (!this.isFolder) {
-        Vue.set(this.model, 'children', [])
-        this.addChild()
-        this.open = true
-      }
-    },
-    addChild: function () {
-      this.model.children.push({
-        name: 'new stuff'
-      })
     }
   }
 }
