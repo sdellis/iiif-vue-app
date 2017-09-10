@@ -4,7 +4,9 @@
       <span>IIIF Vue Components</span>
     </header>
     <main>
-      <router-view></router-view>
+      <router-view class="sidebar" name="tree"></router-view>
+      <router-view class="content" name="photos"></router-view>
+      <div class="clear"></div>
     </main>
   </div>
 </template>
@@ -51,4 +53,16 @@ header span {
   box-sizing: border-box;
   padding-top: 16px;
 }
+
+.sidebar {
+  width: 300px;
+  float: left;
+}
+.content {
+  margin-left: 300px;
+}
+.clear {
+  clear: both;
+}
+
 </style>

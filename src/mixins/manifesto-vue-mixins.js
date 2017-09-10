@@ -30,7 +30,7 @@ const ManifestoVueMixins = {
     return arr.slice(-1)[0]
   },
 
-  posts: function () {
+  photos: function () {
     const s = this.mainSequence()
     const canvases = s.getCanvases()
     return canvases.map(canvas => ({

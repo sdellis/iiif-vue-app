@@ -10,8 +10,9 @@
       <item
         class="item"
         v-for="model in model.children"
+        :key="model.id"
         :model="model">
-      </item>  
+      </item>
     </ul>
   </li>
 </template>

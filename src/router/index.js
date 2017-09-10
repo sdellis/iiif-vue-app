@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Tree from '@/components/Tree'
+import Photos from '@/components/Photos'
 import manifests from '../data/manifests'
 import manifesto from '../../node_modules/manifesto.js/dist/server/manifesto.js'
 import mixins from '../mixins/manifesto-vue-mixins'
@@ -13,9 +14,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Tree',
-      component: Tree,
-      props: { toc: manifestation.getVueTree() }
+      name: 'Main',
+      // component: Tree,
+      components: {
+        tree: Tree,
+        photos: Photos
+      },
+      props: {
+        tree: { toc: manifestation.getVueTree() },
+        photos: { photos: manifestation.photos() }
+      }
     }
   ]
 })
