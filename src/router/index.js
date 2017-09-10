@@ -21,7 +21,8 @@ export default new Router({
         photos: Photos
       },
       props: {
-        tree: { toc: manifestation.getVueTree() }
+        tree: { toc: manifestation.getVueTree() },
+        photos: { photos: manifestation.photos() }
       }
     }
   ]

@@ -1,28 +1,20 @@
 <template>
   <div class="photos">
-      <div class="cell">
-        <img src="http://placehold.it/800x800" class="responsive-image">
-      </div>
-      <div class="cell">
-        <img src="http://placehold.it/800x800" class="responsive-image">
-      </div>
-      <div class="cell">
-        <img src="http://placehold.it/800x800" class="responsive-image">
-      </div>
-      <div class="cell">
-        <img src="http://placehold.it/800x800" class="responsive-image">
-      </div>
+    <div class="cell" v-for="photo in photos" :key="photo.id">
+      <figure className="grid-figure">
+        <img :src="photo.display_src" class="responsive-image">
+        <figcaption>
+          <p>{{photo.caption[0].value}}</p>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'photos',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js PWA'
-    }
-  }
+  props: ['photos']
 }
 </script>
 
