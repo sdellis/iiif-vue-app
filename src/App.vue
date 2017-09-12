@@ -5,7 +5,7 @@
     </header>
     <main>
       <router-view class="sidebar" name="tree"></router-view>
-      <router-view class="content" name="photos"></router-view>
+      <router-view class="content" name="thumbnails"></router-view>
       <div class="clear"></div>
     </main>
   </div>
